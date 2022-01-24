@@ -1,4 +1,4 @@
-name: Hello, world!
+name: Access files
 on:
   push:
     branches: [main]
@@ -6,7 +6,8 @@ on:
 
 jobs:
   build:
-    name: Greeting
+    name: Check the conents of the file
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, world!"
+      - uses: actions/checkout@v1
+      - run: cat sample.txt
